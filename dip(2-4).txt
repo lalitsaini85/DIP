@@ -1,0 +1,45 @@
+2.
+x = linspace(-2*pi, 2*pi);
+y = sin(x);
+plot(x, y);
+y2 = cos(x);
+plot(x,y,x,y2);
+
+/////////////////////////////////
+
+3. tcc:
+img = imread("---");
+imshow(img);
+b1 = img(:, :, 1);
+b2 = img(:, :, 1);
+b3 = img(:, :, 1);
+imshow(b1);
+imshow(b2);
+imshow(b3);
+
+fcc = cat(3,b3,b2,b1);
+imshow(fcc);
+
+////////////////////////////////
+
+4. alternative pixel to 0
+img = imread("---");
+for i = 1:size(im,1)
+	for j = 1:size(im,2)
+		if((mod(i+j),2))==0)
+			im(i,j,:)=0;
+		end
+	end
+end
+imshow(im);
+
+alternative column and row to 0:
+img = imread("---");
+for i = 1:size(im,1)
+	for j = 1:size(im,2)
+		if(mod(i,2))==0 || mod(j,2)==0)
+			im(i,j,:)=0;
+		end
+	end
+end
+imshow(im);

@@ -1,0 +1,40 @@
+load('i_rf.mat');
+img = i_rf;
+subplot(3,3,1);
+imshow(img);
+sdpx = zeros(9,9);
+sdpx(6,6) = 1;
+x0 = sdpx;
+ic = img;
+s = [0 1 0;1 1 1;0 1 0];
+for i=1:9
+    for j=1:9
+        if(img(i,j)==0)
+            ic(i,j)=1;
+        else
+            ic(i,j)=0;
+        end
+    end
+end
+x1 = (imdilate(x0,s)& ic);
+x2 = (imdilate(x1,s)& ic);
+x3 = (imdilate(x2,s) & ic);
+x4 = (imdilate(x3,s) & ic);
+x5 = (imdilate(x4,s) & ic);
+x6 = (imdilate(x5,s) & ic);
+subplot(3,3,2);
+imshow(x6 | img);title("result");
+subplot(3,3,3);
+imshow(x0);
+subplot(3,3,4);
+imshow(x1);
+subplot(3,3,5);
+imshow(x2);
+subplot(3,3,6);
+imshow(x3);
+subplot(3,3,7);
+imshow(x4);
+subplot(3,3,8);
+imshow(x5);
+subplot(3,3,9);
+imshow(x6);
