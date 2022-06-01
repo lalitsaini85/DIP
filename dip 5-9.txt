@@ -1,0 +1,246 @@
+Experiment -5
+Object: Implement the checkerboard effect on an image.
+A) Implementing by using imresize() function:
+im=imread(’ ’);
+X = imresize({)’
+Subplot(1,2,1);
+Imshow(im);
+Subplot(1,2,2);
+
+Imshow(X);
+
+b) without using imresize() function:
+a =imread(‘ ’);
+
+scale = [10,10];
+olds = size(a);
+rows = max(floor (scale, *olds(1:2)),1);
+col = min(round (((1:news(2))-0.5)./scale(2) + 0.5), olds(2));
+row =min(round (((1:news(1))-0.5)./scale(1) + 0.5), olds(1));
+Z= a(row, col, :);
+Subplot(1,2,1);
+imshow(a);
+Subplot(1,2,2);
+
+imshow(Z);
+
+ 
+-----------------------------------------------------------
+----------------------------------------------
+ 
+
+experiment 6
+objective: flip the image in horizontal and vertical direction.
+Using flip: a= imread(‘’);
+
+V = flip(a,1);
+H = flip(a,2);
+Subplot (1,3,1);
+Imshow(a); title (‘Original’);
+Subplot (1,3,2);
+
+Imshow(V); title(‘Vertical’);
+
+Subplot (1,3,3);
+
+Imshow(H); title(‘Horizontal’);
+
+--Without flip() :
+A= imread(‘ ");
+X = size(a,1);
+
+Y = size(a,2);
+
+For i=1: X
+For j=1:Y
+
+V(X-i+1, j, 2) = a(i,i);
+V(i,Y- j+1, :) = a(i,f,:);
+End
+End
+
+Subplot (1,3,1);
+
+Imshow(a); title (‘Original’);
+
+Subplot (1,3,2);
+
+Imshow(V); title(‘Vertical flip’);
+
+Subplot (1,3,3);
+Imshow(H); title(‘Horizontal flip’);
+
+ 
+-------------------------------------
+----------------------------------
+ 
+
+Experiment 07
+Object: To perform region of interest(ROI) in an image.
+Implementation:
+Im = imread(‘ ’);
+Im = imresize(im,[256 256]);
+Imshow(im);
+[col row] = ginput(4);
+C= col;
+R = row;
+Binary mask = roipoly(im, c,r);
+Figure,
+Imshow(Binarymask); title(‘ Selected ROI’);
+NONROI = Zeroes(256,256);
+Roi = Zeroes(256,256);
+For i=1:256
+For j=1:256
+If(Binarymask(I,j)==1)
+
+ROi(i, j)=im(I,j);
+Else
+
+Nonroi(I,j)=im(I,j);
+End
+End
+
+End
+Figure,
+
+Subplot(1,2,1);
+Imshow(roi, []); title(‘roi’);
+Subplot(1,2,2);
+
+Imshow(nonroi, []); title(‘nonroi’);
+
+ 
+
+ -------------------------------------
+-----------------------------------------------
+Experiment 08
+
+Object: To implement bit plane slicing
+
+Implementation:
+l1 = imread(‘ );
+P1 = bitget(i1,1);
+
+P2 = bitget(i1,2);
+
+P3 = bitget(i1,3);
+
+P4 = bitget(i1,4);
+
+PS = bitget(i1,5);
+
+P6 = bitget(i1,6);
+
+P7 = bitget(i1,7);
+
+P8 = bitget(i1,8);
+
+Subplot(3,3,1);
+
+Imshow(i1);
+
+Subplot(3,3,2);
+
+Imshow(logical(P1});
+
+Subplot(3,3,3);
+
+Imshow(logical(P2));
+Subplot(3,3,1);
+
+Imshow(i1);
+
+Subplot(3,3,1);
+
+Imshow(i1);
+
+Subplot(3,3,1);
+
+Imshow(i1);
+
+Subplot(3,3,1);
+
+Imshow(i1);
+
+Subplot(3,3,1);
+
+Imshow(i1); till 9
+
+---------------------------------------------- 
+--------------------------
+ 
+
+Experiment 9
+
+Object : to perform transformnn om image:
+Im:
+
+Negative transformation:
+Im = imread(‘ );
+
+I1 =im;
+
+Y =zeroes({255,255);
+
+For i=1”255
+
+For j=1:255
+
+Im(I,j) = 255- im(1,j);
+
+End
+
+Emd
+Y=im;
+
+Subplot(2,2,1);
+Imshow(i1); title(‘before’);
+Subplot(2,2,2);
+Imshow(y); title(‘after’);
+Log transformation:
+
+l1 = imread(‘ );
+
+Im = i1;
+
+C=12.5;
+
+For i=1:255
+
+For j=1:255
+
+Y = cast(i1(I,j), ‘double’);
+If(L,j) = e*log(1+y);
+
+End
+
+End
+
+Subplot(1,2,1);
+
+Imshow(im);subplot(1,2,2); imshow(i1);
+
+Power trfsn:
+
+11 =imread(‘ );
+
+Im = it; 12 =i1; i3=i1; c=12.5; u=1;
+For i=1:255
+
+For j=1:255
+
+Y= cast(i1(I,j), ‘double’);
+
+11(1,j) = 12.5*y.4(1.1);
+
+|2(I,j) = 14.6*y.4(0.9);
+13(1,j) = 13.4*y.4(1.2);
+
+End
+
+End
+
+Subplot(2,2,1); imshow(im);subplot(2,2,2); imshow(i1);
+
+Subplot(2,2,3); imshow(i2);subplot(2,2,4); imshow({i3);
+
